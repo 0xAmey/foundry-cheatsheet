@@ -1,0 +1,16 @@
+- `forge build` - compile contracts
+- `forge test` - run all tests (files with .t in them in which the functions starting with the word test are run)
+- `forge test -vvvvv` - each v adds more information about the tests ran
+- `forge test --match-contract <contract name> --match-test <keywords>` - runs the tests for the specified contract containing the keyword mentioned
+- `forge test --match-path <path>` - another way to run tests 
+- `test` functions with 
+- `testFail` if the transaction doesn't revert the test fails
+- Note: Test functions must have `external` or `public` visibility 
+- `vm.prank(address(0x1))` - Prank as a user 
+- `vm.expectRevert(errorName.selector)` - Expect transaction to revert with a specific error
+- expectEmit
+    - Expecting the emit to compare the event emitted by test and event emitted by contract. Can set value true if you want the values of both events to match (Note: need to give atleast 4 bool values, can set the (extra?) remaining ones to false) 
+    - `vm.expectEmit(bool, bool, bool, bool)`
+    - `emit Event()`
+    - `contract.call()`
+- `stdMath` to access math library 
