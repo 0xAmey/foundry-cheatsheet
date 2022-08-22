@@ -14,3 +14,45 @@
     - `emit Event()`
     - `contract.call()`
 - `stdMath` to access math library 
+- Test trace colors: 
+    - **Green**: For calls that do not revert
+    - **Red**: For reverting calls
+    - **Blue**: For calls to cheat codes
+    - **Cyan**: For emitted logs
+    - **Yellow**: For contract deployments
+- Fork Testing
+    - Forking Mode:
+        - `forge test --fork-url <your_rpc_url>`
+    - Forking Cheatcodes:
+        - `forkId = vm.createFork(rpc_url, block_number)`
+        - `vm.selectFork(forkId)`
+        - Does the same thing but in a single line:
+            - `vm.createSelectFork(rpc_url)`
+- Fuzz Testing
+    - `vm.assume(condition)`
+    - example
+        - `vm.assume(amount > 0.1 ether)`
+- Deploy
+    - forge can deploy only one contract at a time
+    - `forge create --rpc-url <your_rpc_url> \
+    --constructor-args "ForgeUSD" "FUSD" 18 1000000000000000000000 \
+    --private-key <your_private_key> src/MyToken.sol:MyToken \
+    --etherscan-api-key <your_etherscan_api_key> \
+    --verify`
+    - 
+- Gas Reports
+    - For specific contracts
+        - `gas_reports = ["MyContract", "MyContractFactory"]`
+    - For all
+        - `gas_reports = ["*"]`
+    - To generate run, `forge test --gas-report`
+- Debugger
+    - WIP
+- Cast
+    - `cast <subcommand>`
+- Anvil
+    - Local testnet node
+    - simply type `anvil`
+- Setting environment variables (examples)
+    - `export RPC_URL=<Your RPC endpoint>`
+    - `export PRIVATE_KEY=<Your wallets private key>`
