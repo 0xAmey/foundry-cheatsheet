@@ -9,7 +9,7 @@
 - `vm.prank(address(0x1))` - Prank as a user 
 - `vm.expectRevert(errorName.selector)` - Expect transaction to revert with a specific error
 - expectEmit
-    - Expecting the emit to compare the event emitted by test and event emitted by contract. Can set value true if you want the values of both events to match (Note: need to give 4 bool values, can set the (extra?) remaining ones to false) 
+    - Expecting the emit to compare the event emitted by test and event emitted by contract. Can set value true if you want the values of both events to match (Note: need to _always_ give 4 bool values) 
     - `vm.expectEmit(bool, bool, bool, bool)`
     - `emit Event()`
     - `contract.call()`
