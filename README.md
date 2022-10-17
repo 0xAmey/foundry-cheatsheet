@@ -47,7 +47,17 @@
         - `gas_reports = ["*"]`
     - To generate run, `forge test --gas-report`
 - Debugger
-    - WIP
+    - To enter debug mode 
+        - `forge debug --debug src/SomeContract.sol --sig "myFunc(uint256,string)" 123 "hello"`
+    - To  debug tests
+        - `forge test --debug "testSomething"`
+    - For memory 
+        - **Red words** are about to be written to by the current opcode
+        - **Green words** were written to by the previous opcode
+        - **Cyan words** are being read by the current opcode
+    - For Stack
+        - **Cyan words** are either being read or popped by the current opcode.
+
 - Cast
     - `cast <subcommand>`
 - Anvil
